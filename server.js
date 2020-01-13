@@ -8,7 +8,7 @@ const Data = require('./data');
 const dotenv = require('dotenv');
 const env = dotenv.config().parsed;
 
-const API_PORT = 3001;
+const API_PORT = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 const router = express.Router();
