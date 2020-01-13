@@ -5,7 +5,6 @@ var cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const Data = require('./data');
-const webpack = require('webpack');
 const dotenv = require('dotenv');
 const env = dotenv.config().parsed;
 
@@ -37,10 +36,11 @@ app.use(logger('dev'));
 // this is our get method
 // this method fetches all available data in our database
 router.get('/getData', (req, res) => {
-    Data.find((err, data) => {
+    return res.json({success: true});
+    /*Data.find((err, data) => {
         if (err) return res.json({ success: false, error: err });
         return res.json({ success: true, data: data });
-    });
+    });*/
 });
 
 // this is our update method
