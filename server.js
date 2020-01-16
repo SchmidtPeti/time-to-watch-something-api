@@ -8,7 +8,7 @@ const Data = require('./data');
 const dotenv = require('dotenv');
 const env = dotenv.config().parsed;
 
-const API_PORT = process.env.PORT || 8080;
+const API_PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
 const router = express.Router();
@@ -92,4 +92,3 @@ app.use('/api', router);
 
 // launch our backend into a port
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`));
-console.log(env.MONGODB_SERVER_API);
